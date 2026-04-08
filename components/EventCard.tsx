@@ -32,7 +32,7 @@ export default function EventCard({ title, date, time, description, details }: E
             ))}
           </ul>
         )}
-        <Button variant="outline">View Details</Button>
+        <Button href={`/contact?event=${encodeURIComponent(title)}`} variant="primary">Join Event</Button>
       </div>
     </div>
   );
