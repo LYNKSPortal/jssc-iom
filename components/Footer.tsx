@@ -65,7 +65,7 @@ export default function Footer() {
             </p>
             <div className="mt-4 rounded-lg overflow-hidden border border-gray-700">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2346.8!2d-4.4794!3d54.1509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTTCsDA5JzAzLjIiTiA0wrAyOCc0NS44Ilc!5e0!3m2!1sen!2s!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2346.7!2d-4.4787261!3d54.1479941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48638510c6395ce9%3A0xc3cb710ed1e7bfcb!2sManx%20Legion%20Club!5e0!3m2!1sen!2s!4v1234567890"
                 width="100%"
                 height="150"
                 style={{ border: 0 }}
