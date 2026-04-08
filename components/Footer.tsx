@@ -23,7 +23,7 @@ export default function Footer() {
               alt="JSSC Logo" 
               width={400} 
               height={133}
-              className="w-[400px] h-auto mb-4 brightness-0 invert mx-auto"
+              className="w-[250px] sm:w-[400px] h-auto mb-4 brightness-0 invert mx-auto"
               unoptimized
             />
             <p className="text-gray-300 text-sm leading-relaxed">

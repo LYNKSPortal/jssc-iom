@@ -61,13 +61,45 @@ export default function Membership() {
         <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-charcoal mb-6 text-center">What is included in your membership?</h2>
           
-          <div className="overflow-x-auto mb-8">
+          {/* Mobile View - Stacked Cards */}
+          <div className="md:hidden space-y-4 mb-8">
+            {[
+              { item: 'Legion Membership*', paid: 'Yes', payg: 'No' },
+              { item: 'Christmas Dinner', paid: 'Yes', payg: 'No' },
+              { item: 'Summer Event', paid: 'Yes', payg: 'No' },
+              { item: 'Discounted / Free Events ^', paid: 'Yes', payg: 'No' },
+              { item: 'Affordability', paid: 'Yes', payg: 'Yes' },
+              { item: 'Vote at AGM', paid: 'Yes', payg: 'No' },
+              { item: 'Great discounts through the Year', paid: 'Yes', payg: 'No' },
+            ].map((row, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
+                <h3 className="font-bold text-charcoal mb-3">{row.item}</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center">
+                    <p className="text-sm text-gray-600 mb-1">Paid Membership</p>
+                    <p className={`font-bold text-lg ${row.paid === 'Yes' ? 'text-green-600' : 'text-red-600'}`}>
+                      {row.paid}
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-sm text-gray-600 mb-1">Pay As You Go</p>
+                    <p className={`font-bold text-lg ${row.payg === 'Yes' ? 'text-green-600' : 'text-red-600'}`}>
+                      {row.payg}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop View - Table */}
+          <div className="hidden md:block overflow-x-auto mb-8">
             <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
               <thead>
                 <tr className="bg-primary text-white">
                   <th className="p-4 text-left font-semibold">What's Included?</th>
                   <th className="p-4 text-center font-semibold">Paid Membership</th>
-                  <th className="p-4 text-center font-semibold">Pay As You Go Membership</th>
+                  <th className="p-4 text-center font-semibold">Pay As You Go</th>
                 </tr>
               </thead>
               <tbody>
@@ -78,7 +110,7 @@ export default function Membership() {
                   { item: 'Discounted / Free Events ^', paid: 'Yes', payg: 'No' },
                   { item: 'Affordability', paid: 'Yes', payg: 'Yes' },
                   { item: 'Vote at AGM', paid: 'Yes', payg: 'No' },
-                  { item: 'Enjoy great discounts through the Year', paid: 'Yes', payg: 'No' },
+                  { item: 'Great discounts through the Year', paid: 'Yes', payg: 'No' },
                 ].map((row, index) => (
                   <tr key={index} className={index % 2 === 0 ? 'bg-grey-50' : 'bg-white'}>
                     <td className="p-4 border-t border-gray-200">{row.item}</td>
@@ -206,7 +238,34 @@ export default function Membership() {
         <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-charcoal mb-6 text-center">Upcoming Events</h2>
           
-          <div className="overflow-x-auto mb-8">
+          {/* Mobile View - Stacked Cards */}
+          <div className="md:hidden space-y-4 mb-8">
+            {[
+              { event: '2nd May, 10am, Breakfast at the Sugar Bush Cafe', paidCost: 'Free', paygCost: '£13' },
+              { event: 'May / June, TT Drinks, Bushey\'s Tent, Douglas', paidCost: 'Entry Fee Paid', paygCost: 'N/A' },
+              { event: '27th June, 1950\'s Night - Including Bar Games, Dinner, Pre Drinks, Band and Dancers', paidCost: 'Free', paygCost: '£15' },
+              { event: '21st August, Spanish Dining Train - 3 Course Meal and return train fair', paidCost: '£27 (£20 discount)', paygCost: '£47' },
+              { event: 'September / October, Axe Throwing and Food', paidCost: 'TBC', paygCost: 'TBC' },
+              { event: '12th December, Christmas Black Tie Casino Night. Including drinks, dinner and entertainment', paidCost: 'Free', paygCost: '£30' },
+            ].map((row, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-md">
+                <h3 className="font-bold text-charcoal mb-3 text-base">{row.event}</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center">
+                    <p className="text-sm text-gray-600 mb-1">Paid Member</p>
+                    <p className="font-bold text-lg text-green-600">{row.paidCost}</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-sm text-gray-600 mb-1">Pay As You Go</p>
+                    <p className="font-bold text-lg text-primary">{row.paygCost}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop View - Table */}
+          <div className="hidden md:block overflow-x-auto mb-8">
             <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
               <thead>
                 <tr className="bg-primary text-white">
@@ -220,7 +279,7 @@ export default function Membership() {
                   { event: '2nd May, 10am, Breakfast at the Sugar Bush Cafe', paidCost: 'Free', paygCost: '£13' },
                   { event: 'May / June, TT Drinks, Bushey\'s Tent, Douglas', paidCost: 'Entry Fee Paid', paygCost: 'N/A' },
                   { event: '27th June, 1950\'s Night - Including Bar Games, Dinner, Pre Drinks, Band and Dancers', paidCost: 'Free', paygCost: '£15' },
-                  { event: '21st August, Spanish Dining Train - 3 Course Meal and return train fair to', paidCost: '£27 (£20 discount)', paygCost: '£47' },
+                  { event: '21st August, Spanish Dining Train - 3 Course Meal and return train fair', paidCost: '£27 (£20 discount)', paygCost: '£47' },
                   { event: 'September / October, Axe Throwing and Food', paidCost: 'TBC', paygCost: 'TBC' },
                   { event: '12th December, Christmas Black Tie Casino Night. Including drinks, dinner and entertainment', paidCost: 'Free', paygCost: '£30' },
                 ].map((row, index) => (

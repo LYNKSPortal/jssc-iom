@@ -29,13 +29,13 @@ export default function Header() {
               alt="JSSC Logo" 
               width={300} 
               height={100}
-              className="w-[300px] h-auto object-contain"
+              className="w-[200px] sm:w-[300px] h-auto object-contain"
               priority
               unoptimized
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden nav:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -51,10 +51,11 @@ export default function Header() {
           </nav>
 
           <button
-            className="lg:hidden text-charcoal p-2"
+            className="nav:hidden flex items-center gap-2 text-charcoal p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
+            <span className="font-semibold text-lg">MENU</span>
             <svg
               className="w-6 h-6"
               fill="none"
@@ -74,7 +75,7 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <nav className="lg:hidden pb-4 space-y-2">
+          <nav className="nav:hidden pb-4 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -86,8 +87,8 @@ export default function Header() {
               </Link>
             ))}
             <div className="pt-2">
-              <Button href="/membership" variant="primary" className="w-full">
-                Join Now
+              <Button href="/apply" variant="primary" className="w-full">
+                Apply Now
               </Button>
             </div>
           </nav>
