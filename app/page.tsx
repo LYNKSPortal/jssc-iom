@@ -1,65 +1,130 @@
-import Image from "next/image";
+import Button from '@/components/Button';
+import Card from '@/components/Card';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div>
+      <section className="relative bg-gradient-to-br from-primary via-primary-dark to-charcoal text-white py-24 sm:py-32">
+        <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Welcome to the Joint Services Social Club
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl sm:text-2xl mb-10 text-white/90 max-w-3xl mx-auto">
+            Bringing together Armed Forces, Emergency Services, and the Isle of Man veteran community
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/apply" variant="primary" className="!bg-white !text-primary hover:!bg-gray-100 hover:!text-primary">
+              Apply Now
+            </Button>
+            <Button href="/events" variant="outline" className="!border-white !text-white hover:!bg-white hover:!text-primary">
+              View Events
+            </Button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="py-16 bg-grey-50">
+        <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full">
+            <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-6 text-center">
+              About the JSSC
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed text-center">
+              The Joint Services Social Club (JSSC) is an inclusive, member-led social club based at the 
+              Manx Legion Club in Douglas. It brings together serving and veteran members of the UK and 
+              Commonwealth Armed Forces, Emergency Services personnel, and those who support the Island's 
+              veteran community.
+            </p>
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-6">
+              Our Purpose
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              To promote comradeship, wellbeing, and community through organised social activities 
+              in a friendly and respectful environment.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-grey-50">
+        <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center">
+            What We Do
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-charcoal mb-3">Social Events</h3>
+                <p className="text-gray-700">
+                  Organise social events throughout the year for members to connect and enjoy together
+                </p>
+              </div>
+            </Card>
+
+            <Card>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-charcoal mb-3">Community Space</h3>
+                <p className="text-gray-700">
+                  Provide a welcoming community space for members to gather and build lasting friendships
+                </p>
+              </div>
+            </Card>
+
+            <Card>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-charcoal mb-3">Foster Connections</h3>
+                <p className="text-gray-700">
+                  Foster connections between service backgrounds and strengthen community bonds
+                </p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gradient-to-r from-primary to-primary-dark text-white">
+        <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Ready to Join Our Community?
+          </h2>
+          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+            Become a member of the JSSC and be part of a welcoming community that values comradeship and shared experience.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/membership" variant="primary" className="!bg-white !text-primary hover:!bg-gray-100 hover:!text-primary">
+              Join the Club
+            </Button>
+            <Button href="/events" variant="outline" className="!border-white !text-white hover:!bg-white hover:!text-primary">
+              Explore Events
+            </Button>
+            <Button href="/sponsors" variant="outline" className="!border-white !text-white hover:!bg-white hover:!text-primary">
+              Learn About Sponsorship
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
