@@ -1,5 +1,6 @@
 import Button from '@/components/Button';
 import Card from '@/components/Card';
+import Image from 'next/image';
 
 export default function Sponsors() {
   return (
@@ -19,26 +20,36 @@ export default function Sponsors() {
             <h2 className="text-3xl font-bold text-charcoal mb-6">Main Sponsor</h2>
           </div>
 
-          <Card className="mb-8">
+          <div className="mb-8 rounded-lg shadow-md p-6" style={{ backgroundColor: '#2B273E' }}>
             <div className="text-center mb-6">
-              <h3 className="text-3xl font-bold text-primary mb-4">B&B Furniture</h3>
+              <div className="mb-6 flex justify-center">
+                <Image 
+                  src="/b-and-b-logo.jpg" 
+                  alt="B&B Furniture Logo" 
+                  width={200} 
+                  height={100}
+                  className="w-[200px] h-auto"
+                  unoptimized
+                />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-4">B&B Furniture</h3>
             </div>
             
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            <p className="text-lg text-white leading-relaxed mb-6">
               B&B Furniture is a leading Isle of Man furniture retailer, offering quality kitchens, bedrooms, 
               dining and living furniture designed to suit every home. With expert designers, in-house fitters, 
               free island-wide delivery, and flexible 0% finance options, B&B Furniture is committed to helping 
               customers create a home they love.
             </p>
 
-            <div className="bg-grey-50 rounded-lg p-6 border-l-4 border-primary">
-              <p className="text-gray-700 italic">
+            <div className="bg-white/10 rounded-lg p-6 border-l-4 border-primary">
+              <p className="text-white italic">
                 We extend our sincere gratitude to B&B Furniture for their generous support of the Joint Services 
                 Social Club and our community. Their commitment helps us deliver meaningful events and activities 
                 that bring our members together.
               </p>
             </div>
-          </Card>
+          </div>
         </div>
       </section>
 
@@ -52,47 +63,46 @@ export default function Sponsors() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              { name: 'Serenity Suites', donation: '2 nights accommodation and breakfast' },
-              { name: 'Entertainer', donation: '£15 Voucher' },
-              { name: 'Morgan Bakery', donation: '£10 Voucher' },
-              { name: 'Harveys Nails', donation: '3 x £30 voucher' },
-              { name: 'Anonymous Donor', donation: 'Fishing Rod' },
-              { name: 'Utopia', donation: 'Blow Dry Voucher' },
-              { name: 'Prime Performance Gym', donation: 'One Month Membership' },
-              { name: 'Ticket Hall', donation: '£30 Voucher' },
-              { name: 'Kelvins Fishing Tackle', donation: '£50 Voucher' },
-              { name: 'Terrace Chip Shop', donation: '£20 Voucher' },
-              { name: 'Taste of Italy', donation: '2 x £15 voucher' },
-              { name: 'Vanilla Room', donation: 'Blow Dry' },
-              { name: 'Element Isle', donation: '£25 Voucher' },
-              { name: 'IOM Creameries', donation: 'Cheese Hamper' },
-              { name: 'Devereau\'s', donation: 'Box of Kippers' },
-              { name: 'Asia Best Choice', donation: 'Hamper' },
-              { name: 'Jason Griffiths', donation: '2 x Umbrellas' },
-              { name: 'EVF', donation: '£25 Voucher' },
-              { name: 'Diao Racing', donation: 'Cap' },
-              { name: 'Okells', donation: '2 x Case of Bitter' },
-              { name: 'Extreme Arts and Gadgets', donation: 'Signed Print of John McGuinness' },
-              { name: 'Curpheys', donation: 'Cabin Bag' },
-              { name: 'T G Jones', donation: 'Colouring Pens' },
-              { name: '3 Wheeling', donation: 'Clothing, Cap and Pins' },
-              { name: 'Metzeler', donation: 'Cap and T shirt' },
-              { name: 'Motul', donation: 'Cap, Snood, Cleaning cloth' },
-              { name: 'Creg Ny Baa', donation: '£30 Voucher' },
-              { name: 'Jackson Racing', donation: 'T Shirt' },
-              { name: 'Milenco', donation: 'T Shirt' },
-              { name: 'Manx Tattoo', donation: '£20 vouchers and daft ducks' },
-              { name: 'Muck Off', donation: 'Products by Muck Off' },
-              { name: 'Oakley', donation: 'Cap' },
-              { name: 'Silver Spoon Rings', donation: '£65 voucher' },
-              { name: 'Vannin Supreme Clean', donation: '3 Hours of Cleaning' },
-              { name: 'JSSC Members', donation: 'Personal donations' }
+              'Serenity Suites',
+              'Entertainer',
+              'Morgan Bakery',
+              'Harveys Nails',
+              'Anonymous Donor',
+              'Utopia',
+              'Prime Performance Gym',
+              'Ticket Hall',
+              'Kelvins Fishing Tackle',
+              'Terrace Chip Shop',
+              'Taste of Italy',
+              'Vanilla Room',
+              'Element Isle',
+              'IOM Creameries',
+              'Devereau\'s',
+              'Asia Best Choice',
+              'Jason Griffiths',
+              'EVF',
+              'Diao Racing',
+              'Okells',
+              'Extreme Arts and Gadgets',
+              'Curpheys',
+              'T G Jones',
+              '3 Wheeling',
+              'Metzeler',
+              'Motul',
+              'Creg Ny Baa',
+              'Jackson Racing',
+              'Milenco',
+              'Manx Tattoo',
+              'Muck Off',
+              'Oakley',
+              'Silver Spoon Rings',
+              'Vannin Supreme Clean',
+              'JSSC Members'
             ].map((donor, index) => (
-              <div key={index} className="bg-grey-50 rounded-lg p-4 border-l-4 border-primary">
-                <h4 className="font-semibold text-charcoal mb-1">{donor.name}</h4>
-                <p className="text-sm text-gray-600">{donor.donation}</p>
+              <div key={index} className="bg-grey-50 rounded-lg p-4 border-l-4 border-primary text-center">
+                <h4 className="font-semibold text-charcoal">{donor}</h4>
               </div>
             ))}
           </div>

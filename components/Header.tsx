@@ -13,6 +13,7 @@ export default function Header() {
     { href: '/about', label: 'About' },
     { href: '/membership', label: 'Membership' },
     { href: '/events', label: 'Events' },
+    { href: '/constitution', label: 'Constitution' },
     { href: '/community', label: 'Community' },
     { href: '/sponsors', label: 'Sponsors' },
     { href: '/faq', label: 'FAQ' },

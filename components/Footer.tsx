@@ -80,7 +80,10 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400">
           <p>&copy; {new Date().getFullYear()} Joint Services Social Club. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 sm:mt-0">
+          <div className="flex flex-wrap gap-6 mt-4 sm:mt-0 justify-center sm:justify-end">
+            <Link href="/constitution" className="hover:text-primary transition-colors duration-200">
+              Constitution
+            </Link>
             <Link href="/terms" className="hover:text-primary transition-colors duration-200">
               Terms & Conditions
             </Link>
@@ -90,6 +93,14 @@ export default function Footer() {
             <Link href="/refunds" className="hover:text-primary transition-colors duration-200">
               Refund Policy
             </Link>
+            <a 
+              href="https://www.gov.im/about-the-government/data-protection-gdpr-on-the-isle-of-man/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors duration-200"
+            >
+              Data Protection
+            </a>
           </div>
         </div>
       </div>

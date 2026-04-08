@@ -3,16 +3,60 @@ import EventCard from '@/components/EventCard';
 export default function Events() {
   const events = [
     {
+      title: 'Breakfast with JSSC',
+      date: '3 May 2026',
+      time: '10:00am',
+      description: 'Join us for a delicious breakfast at the Sugarbush Cafe in Douglas.',
+      details: [
+        'Paid members: Free',
+        'Guests: £13 Each',
+        'Location: Sugarbush Cafe Douglas, Isle of Man'
+      ]
+    },
+    {
+      title: 'TT Drinks with JSSC',
+      date: 'To be confirmed',
+      time: 'TBC',
+      description: 'Join us for drinks at Bushys Tent during the TT races.',
+      details: [
+        'Members: Entry Paid - Drinks not included',
+        'Guests: Pay on entry',
+        'Location: Bushys Tent'
+      ]
+    },
+    {
       title: '1950s Rock Evening',
       date: '27 June 2026',
       time: '19:00 – 23:45',
       description: 'Step back in time and enjoy an evening of classic 1950s rock and roll music.',
+      details: [
+        'Paid members: Free',
+        'Guests: £15 Each',
+        'Location: Manx Legion Douglas'
+      ]
     },
     {
       title: 'Summer Dining Train',
       date: '21 August 2026',
       time: '18:45 – 22:30',
       description: 'A scenic railway journey combined with a delightful dining experience.',
+      details: [
+        'Members: £27 Each',
+        'Guests: £47 Each',
+        'Location: Douglas'
+      ]
+    },
+    {
+      title: 'Axe Throwing and Food',
+      date: '11 September 2026',
+      time: '18:30',
+      description: 'An exciting evening of axe throwing followed by food. Bring your own drinks!',
+      details: [
+        'Members: To Be Confirmed',
+        'Guests: To Be Confirmed',
+        'BYOB (Bring Your Own Bottle)',
+        'Location: Laser Mayhem, Watertrough Plantation, South Barrule, Isle of Man'
+      ]
     },
     {
       title: 'Christmas Event',
@@ -23,7 +67,8 @@ export default function Events() {
         'Pre-drinks on arrival',
         '3-course meal',
         'Live entertainment',
-        'Great company and festive atmosphere'
+        'Great company and festive atmosphere',
+        'Location: Manx Legion Douglas'
       ]
     }
   ];

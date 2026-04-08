@@ -95,13 +95,7 @@ export default function Refunds() {
               <li className="flex items-start">
                 <span className="text-primary mr-3 font-bold">•</span>
                 <span className="text-gray-700">
-                  Refunds will be processed within 30 days of receiving a valid request.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-3 font-bold">•</span>
-                <span className="text-gray-700">
-                  Refunds will be issued by bank transfer or credit towards a future event or the next year's membership.
+                  Refunds will be credited toward future events or the following year's membership.
                 </span>
               </li>
             </ul>
