@@ -53,6 +53,41 @@ export default function Sponsors() {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+        <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-charcoal mb-6">Our Sponsors</h2>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              We are proud to partner with these outstanding businesses who support our community.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              'Untitled-7-Recovered-970x1024.jpg',
+              'Untitled-8-970x1024.jpg',
+              'Untitled-8-Recovered-970x1024.jpg',
+              'Untitled-10-970x1024.jpg',
+              'Untitled-11-970x1024.jpg',
+              'Untitled-12-970x1024.jpg',
+              'Untitled-13-970x1024.jpg',
+              'Untitled-14-970x1024.jpg'
+            ].map((image, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+                <Image
+                  src={`/sponsors/${image}`}
+                  alt={`Sponsor ${index + 1}`}
+                  width={970}
+                  height={1024}
+                  className="w-full h-auto rounded"
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-grey-50">
         <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
