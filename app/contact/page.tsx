@@ -137,16 +137,23 @@ function ContactForm() {
                   <label htmlFor="event" className="block text-gray-700 font-semibold mb-2">
                     Which event would you like to join? *
                   </label>
-                  <input
-                    type="text"
+                  <select
                     id="event"
                     name="event"
                     required
                     value={formData.event}
                     onChange={handleChange}
-                    placeholder="Enter event name"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                  />
+                  >
+                    <option value="">Select an event</option>
+                    <option value="AGM">AGM - 3rd September</option>
+                    <option value="Axe Throwing and Food">Axe Throwing and Food - 11th September</option>
+                    <option value="Christmas Dinner">Christmas Dinner - 12th December (Manx Legion)</option>
+                    <option value="Horse Racing Night">Horse Racing Night - February / March</option>
+                    <option value="Summer Event">Summer Event - June / July</option>
+                    <option value="Event TBC">Event TBC - September / October</option>
+                    <option value="Christmas Event">Christmas Event - December</option>
+                  </select>
                 </div>
               )}
 

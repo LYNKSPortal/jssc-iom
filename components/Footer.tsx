@@ -60,8 +60,8 @@ export default function Footer() {
               </a>
             </p>
             <p className="text-gray-300 text-sm mb-4">
-              Based at the Manx Legion Club<br />
-              Douglas, Isle of Man
+              Hosted at the Manx Legion Club<br />
+              Douglas, Isle of Man, IM1 2BQ
             </p>
             <div className="mt-4 rounded-lg overflow-hidden border border-gray-700">
               <iframe

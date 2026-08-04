@@ -3,73 +3,55 @@ import EventCard from '@/components/EventCard';
 export default function Events() {
   const events = [
     {
-      title: 'Breakfast with JSSC',
-      date: '3 May 2026',
-      time: '10:00am',
-      description: 'Join us for a delicious breakfast at the Sugarbush Cafe in Douglas.',
-      details: [
-        'Paid members: Free',
-        'Guests: £13 Each',
-        'Location: Sugarbush Cafe Douglas, Isle of Man'
-      ]
-    },
-    {
-      title: 'TT Drinks with JSSC',
-      date: 'To be confirmed',
-      time: 'TBC',
-      description: 'Join us for drinks at Bushys Tent during the TT races.',
-      details: [
-        'Members: Entry Paid - Drinks not included',
-        'Guests: Pay on entry',
-        'Location: Bushys Tent'
-      ]
-    },
-    {
-      title: '1950s Rock Evening',
-      date: '27 June 2026',
-      time: '19:00 – 23:45',
-      description: 'Step back in time and enjoy an evening of classic 1950s rock and roll music.',
-      details: [
-        'Paid members: Free',
-        'Guests: £15 Each',
-        'Location: Manx Legion Douglas'
-      ]
-    },
-    {
-      title: 'Summer Dining Train',
-      date: '21 August 2026',
-      time: '18:45 – 22:30',
-      description: 'A scenic railway journey combined with a delightful dining experience.',
-      details: [
-        'Members: £27 Each',
-        'Guests: £47 Each',
-        'Location: Douglas'
-      ]
+      title: 'AGM',
+      date: '3rd September',
+      time: '18:30',
+      description: 'Annual General Meeting for JSSC members.',
+      details: []
     },
     {
       title: 'Axe Throwing and Food',
-      date: '11 September 2026',
-      time: '18:30',
-      description: 'An exciting evening of axe throwing followed by food. Bring your own drinks!',
+      date: '11th September',
+      time: 'TBC',
+      description: 'An exciting evening of axe throwing followed by food.',
+      details: []
+    },
+    {
+      title: 'Christmas Dinner',
+      date: '12th December',
+      time: 'TBC',
+      description: 'Celebrate the festive season with fellow members.',
       details: [
-        'Members: To Be Confirmed',
-        'Guests: To Be Confirmed',
-        'BYOB (Bring Your Own Bottle)',
-        'Location: Laser Mayhem, Watertrough Plantation, South Barrule, Isle of Man'
+        'Location: Manx Legion'
       ]
     },
     {
+      title: 'Horse Racing Night',
+      date: 'February / March',
+      time: 'TBC',
+      description: 'An evening of horse racing fun for members and guests.',
+      details: []
+    },
+    {
+      title: 'Summer Event',
+      date: 'June / July',
+      time: 'TBC',
+      description: 'Meal on the train followed by drinks at the legion.',
+      details: []
+    },
+    {
+      title: 'Event TBC',
+      date: 'September / October',
+      time: 'TBC',
+      description: '',
+      details: []
+    },
+    {
       title: 'Christmas Event',
-      date: '12 December 2026',
-      time: '18:30 – 23:30',
-      description: 'Celebrate the festive season with fellow members at our annual Christmas gathering.',
-      details: [
-        'Pre-drinks on arrival',
-        '3-course meal',
-        'Live entertainment',
-        'Great company and festive atmosphere',
-        'Location: Manx Legion Douglas'
-      ]
+      date: 'December',
+      time: 'TBC',
+      description: '',
+      details: []
     }
   ];
 
@@ -87,7 +69,7 @@ export default function Events() {
       <section className="py-16 bg-grey-50">
         <div className="max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-charcoal mb-4">Upcoming Events</h2>
+            <h2 className="text-3xl font-bold text-charcoal mb-4">Upcoming Events for 2026/27</h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Our events bring members together to enjoy shared experiences, build friendships, 
               and strengthen our community bonds.
