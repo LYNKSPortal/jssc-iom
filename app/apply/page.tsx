@@ -37,11 +37,30 @@ export default function Apply() {
     photoConsent: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    alert('Application submitted! We will contact you soon.');
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      alert('Application submitted! We will contact you soon.');
+    } catch (error) {
+      console.error('Failed to submit application:', error);
+      alert('Sorry, something went wrong submitting your application. Please try again or email us directly at support@jssc.co.im.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -422,9 +441,10 @@ export default function Apply() {
               </p>
               <button
                 type="submit"
-                className="px-8 py-3 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark transition-all duration-200 shadow-md hover:shadow-lg"
+                disabled={isSubmitting}
+                className="px-8 py-3 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Submit Application
+                {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </button>
             </div>
           </form>

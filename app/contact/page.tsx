@@ -27,10 +27,37 @@ function ContactForm() {
     }
   }, [eventFromUrl]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your enquiry! We will be in touch soon.');
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      alert('Thank you for your enquiry! We will be in touch soon.');
+      setFormData(prev => ({
+        ...prev,
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      }));
+    } catch (error) {
+      console.error('Failed to send contact form:', error);
+      alert('Sorry, something went wrong sending your message. Please try again or email us directly at support@jssc.co.im.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -175,9 +202,10 @@ function ContactForm() {
 
               <button
                 type="submit"
-                className="px-8 py-3 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark transition-all duration-200 shadow-md hover:shadow-lg"
+                disabled={isSubmitting}
+                className="px-8 py-3 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </Card>
